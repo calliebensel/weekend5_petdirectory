@@ -39,6 +39,7 @@ $http({
 });
   // console.log( 'after the post:', response );
 }; // end postPet
+$scope.getPet();
 }]); // myApp.controller
 
 
