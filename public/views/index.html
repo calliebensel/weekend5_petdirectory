@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="../vendors/angular.min.js" charset="utf-8"></script>
+    <script src="../scripts/client.js" charset="utf-8"></script>
+    <title>Pet Directory</title>
+    <style media="screen">
+      html {margin: 0 auto; text-align: center;}
+      ul {background-color: aqua; border-radius: 10px; display: inline-flex; margin: 10px; list-style-type: none; padding: 10px;}
+    </style>
+  </head>
+  <body ng-app="myApp" id="main">
+      <h1>Welcome to the Tau Pet Directory</h1>
+        <h2>Add New Pet</h2>
+          <div ng-controller="DirectoryController">
+          <input type="text" ng-model="petNameIn" placeholder="Pet Name">
+          <input type="text" ng-model="typeOfAnimalIn" placeholder="Animal Type">
+          <input type="text" ng-model="petAgeIn" placeholder="Age">
+          <input type="text" ng-model="picUrlIn" placeholder="Image Url">
+          <button type="button" ng-click="postPet();">Add</button>
+        <h2>Tau Pets</h2>
+          <ul np-repeat="petdirectory in directoryResults">
+            <li>
+              <p>Pet Name: {{ petdirectory.name }}</p>
+              <p>Pet Type: {{ petdirectory.type }}</p>
+              <p>Pet Age: {{ petdirectory.age }}</p>
+              <p><img ng-src"{{ petdirectory.image }}" alt="Description"</p>
+            </li>
+          </ul>
+    </div>
+  </body>
+</html>
